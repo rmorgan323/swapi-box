@@ -13,18 +13,18 @@ class FilmCrawl extends Component {
 	}
 
 	componentDidMount() {
-		// let randomFilm = Math.ceil(Math.random() * 7)
+		let randomFilm = Math.ceil(Math.random() * 7)
 
-		// fetch(`https://swapi.co/api/films/${randomFilm}`)
-		// .then(data => data.json())
-		// .then(data => {
-		// 	const filmCrawl = pullOpeningCrawl(data);
-			
-		// 	this.setState({ story: filmCrawl })
-		// 	console.log(this.state.story)
-		// })
-		const filmCrawl = pullOpeningCrawl(7);
-		this.setState({ story: filmCrawl })
+		fetch(`https://swapi.co/api/films/${randomFilm}/`)
+		.then(data => data.json())
+		.then(data => {
+
+			const filmCrawl = pullOpeningCrawl(data);
+
+			this.setState({ story: filmCrawl })
+		})
+		// const filmCrawl = pullOpeningCrawl(7);
+		// this.setState({ story: filmCrawl })
 	}
 
 	render() {

@@ -1,17 +1,16 @@
 import React from 'react';
 import './Header.css';
 
-const Header = (props) => {
+const Header = ( {favorites, getWorlds, getVehicles, handleUpdateState} ) => {
 
 	return (
 		<div className="header-component">
-			{console.log('header component', props)}
-			<h1>swAPIbox</h1>
-			<h6>FAVORITES <span>{props.favorites.length}</span></h6>
+			<h1>nerdbox</h1>
+			<h6>FAVORITES <span>{favorites.length}</span></h6>
 			<div>
-				<button onClick={props.getCharacters}>characters</button>
-				<button onClick={props.getWorlds}>worlds</button>
-				<button onClick={props.getVehicles}>vehicles</button>
+				<button onClick={() => handleUpdateState('characters')}>characters</button>
+				<button onClick={() => handleUpdateState('worlds')}>worlds</button>
+				<button onClick={() => handleUpdateState('vehicles')}>vehicles</button>
 			</div>
 		</div>
 	)
