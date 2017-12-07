@@ -11,12 +11,20 @@ class App extends Component {
 		this.state = {
 			containerTitle: 'select nerdy item',
 			items: [],
-			active: 'load'
+			active: 'load',
+			favorites: 0
 		}
 	}
 
 	handleUpdateState = (type) => {
-		this.setState({active: type})
+		const titleArray = ['characters', 'worlds', 'vehicles', 'favorites']
+		this.setState({active: type, containerTitle: titleArray[type]})
+	}
+
+	findFavorites = () => {
+		const favorites = this.state.items.filter(item => item.favorite === true)
+		const numberOfFavorites = favorites.length
+		this.setState({favorites: numberOfFavorites})
 	}
 
 	getCharacters = async () => {
@@ -92,20 +100,22 @@ class App extends Component {
 		let allItems = await [...allChars, ...allWorlds, ...allVehicles]
 
 		this.setState({items: allItems})
-		this.setState({characters: allChars, worlds: allWorlds, vehicles: allVehicles})
 	}
 
 	favoriteCard = (id) => {
 		let getCardIndex = this.state.items.findIndex(item => item.id === id)
 		let newState = this.state.items;
+		
 		newState[getCardIndex].favorite = !newState[getCardIndex].favorite;
 		this.setState({items: newState})
+		this.findFavorites();
 	}
 
   render() {
     return (
       <div>
-		    <Header handleUpdateState={this.handleUpdateState} />
+		    <Header handleUpdateState={this.handleUpdateState} 
+		    				numberOfFavorites={this.state.favorites} />
 
       	<CardContainer containerTitle={this.state.containerTitle}
   								 	 		 favoriteCard={this.favoriteCard} 
