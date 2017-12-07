@@ -6,12 +6,11 @@ const Header = ({handleUpdateState, numberOfFavorites}) => {
 	return (
 		<div className="header-component">
 			<h1>nerdbox</h1>
-			<h6>FAVORITES <span>{numberOfFavorites}</span></h6>
 			<div>
 				<button onClick={() => handleUpdateState(0)}>characters</button>
 				<button onClick={() => handleUpdateState(1)}>worlds</button>
 				<button onClick={() => handleUpdateState(2)}>vehicles</button>
-				<button onClick={() => handleUpdateState(3)}>favorites</button>
+				<button onClick={() => handleUpdateState(3)}>favorites<span>{numberOfFavorites}</span></button>
 			</div>
 		</div>
 	)
