@@ -2,7 +2,7 @@ import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card.js';
 
-const CardContainer = ({ containerTitle, favoriteCard, active, items }) => {
+const CardContainer = ({containerTitle, favoriteCard, active, items}) => {
 
 		let displayItems;
 

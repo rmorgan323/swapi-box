@@ -18,13 +18,10 @@ class FilmCrawl extends Component {
 		fetch(`https://swapi.co/api/films/${randomFilm}/`)
 		.then(data => data.json())
 		.then(data => {
-
 			const filmCrawl = pullOpeningCrawl(data);
 
 			this.setState({ story: filmCrawl })
 		})
-		// const filmCrawl = pullOpeningCrawl(7);
-		// this.setState({ story: filmCrawl })
 	}
 
 	render() {
