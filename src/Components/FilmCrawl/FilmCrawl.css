@@ -42,7 +42,7 @@
   right: 0;
   top: 0;
   bottom: 60%;
-  background-image: linear-gradient(top, black 0%, transparent 100%);
+  background-image: linear-gradient(to bottom, black 0%, transparent 100%);
   pointer-events: none; }
 
 .crawl-content {
