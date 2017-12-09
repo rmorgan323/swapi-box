@@ -8,7 +8,7 @@ describe('Header test', () => {
     const renderedHeader = shallow(<Header />);
 
     expect(renderedHeader.find('.Header').length).toEqual(1);
-  })
+  });
 
   //snapshot?
-})
+});
