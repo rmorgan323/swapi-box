@@ -5,12 +5,12 @@ const Header = ({handleUpdateState, numberOfFavorites}) => {
 
 	return (
 		<div className="header-component">
-			<h1>nerdbox</h1>
-			<div>
-				<button onClick={() => handleUpdateState(0)}>characters</button>
-				<button onClick={() => handleUpdateState(1)}>worlds</button>
-				<button onClick={() => handleUpdateState(2)}>vehicles</button>
-				<button onClick={() => handleUpdateState(3)}>favorites<span>{numberOfFavorites}</span></button>
+			<div className="logo"></div>
+			<div className="header-buttons">
+				<button onClick={() => handleUpdateState(0)}>CHARACTERS</button>
+				<button onClick={() => handleUpdateState(1)}>WORLDS</button>
+				<button onClick={() => handleUpdateState(2)}>VEHICLES</button>
+				<button onClick={() => handleUpdateState(3)}>FAVORITES<span>{numberOfFavorites}</span></button>
 			</div>
 		</div>
 	)

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({name, lineOne, lineTwo, lineThree, lineFour, id, cardType, favoriteCard}) => {
+const Card = ({name, lineOne, lineTwo, lineThree, lineFour, id, cardType, favoriteStatus, favoriteCard}) => {
 
 	const lineOneTitle = ['Homeworld: ', 'Terrain: ', 'Model: ']
 	const lineTwoTitle = ['Species: ', 'Population: ', 'Class: ']
@@ -9,18 +9,22 @@ const Card = ({name, lineOne, lineTwo, lineThree, lineFour, id, cardType, favori
 	const lineFourTitle = ['', 'Known Residents: ', '']
 
 	let cardDisplay = (
-		<div>
-			<button onClick={() => favoriteCard(id)}>FAV</button>
-			<h3>{name}</h3>
-			<h4>{lineOneTitle[cardType]}{lineOne}</h4>
-			<h4>{lineTwoTitle[cardType]}{lineTwo}</h4>
-			<h4>{lineThreeTitle[cardType]}{lineThree}</h4>
-			<h4>{lineFourTitle[cardType]}{lineFour}</h4>
+		<div className="card-display">
+			<div className="card-header-box">
+				<h3>{name}</h3>
+			</div>
+			<h4><span>{lineOneTitle[cardType]} </span>{lineOne}</h4>
+			<h4><span>{lineTwoTitle[cardType]} </span>{lineTwo}</h4>
+			<h4><span>{lineThreeTitle[cardType]} </span>{lineThree}</h4>
+			<h4 className="overflow"><span>{lineFourTitle[cardType]} </span>{lineFour}</h4>
+			<button onClick={() => favoriteCard(id)}
+				className={ favoriteStatus === false ? 'star-outline' : 'star-solid' }
+			></button>
 		</div>
 	)
 
 	return (
-		<div className="card-component">
+		<div className={ favoriteStatus === false ? 'card-component' : 'card-component fave-card'}>
 			{cardDisplay}
 		</div>
 	)

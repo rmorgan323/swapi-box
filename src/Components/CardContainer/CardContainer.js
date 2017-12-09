@@ -3,7 +3,6 @@ import './CardContainer.css';
 import Card from '../Card/Card.js';
 
 const CardContainer = ({containerTitle, favoriteCard, active, items}) => {
-
 		let displayItems;
 
 		if (active === 3) {
@@ -21,12 +20,13 @@ const CardContainer = ({containerTitle, favoriteCard, active, items}) => {
 									 key={item.id} 
 									 id={item.id}
 									 cardType={item.cardType}
+									 favoriteStatus={item.favorite}
 	                 favoriteCard={favoriteCard} />
 		})
 	
 	return (
 		<div className="card-container-component">
-			<h2>{containerTitle}</h2>
+			
 			<div className="card-container">
 				{currentDisplay}
 			</div>
