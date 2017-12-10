@@ -1,22 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import FilmCrawl from './FilmCrawl';
 
+jest.mock('../../helper/apiCalls.js');
+
 describe('FilmCrawl test', () => {
-  it.skip('should render correctly', () => {
+  it('should render correctly', () => {
     const renderedFilmCrawl = shallow(<FilmCrawl />);
 
-    expect(renderedFilmCrawl.find('.FilmCrawl').length).toEqual(1);
-  })
+    expect(renderedFilmCrawl.find('.film-crawl-container').length).toEqual(1);
+  });
 
-  //snapshot?
+  it.skip('should set state correctly when component mounts', async () => {
+    const renderedFilmCrawl = await shallow(<FilmCrawl />);
+    const expected = {
+      title: 'A New Hope', 
+      date: 'May 15, 1977', 
+      episode: 'VII', 
+      crawl: [
+        'It is a...', 
+        'Rebel spaceships...', 
+        'have won...'
+      ]};
 
-  it.skip('calls fetch when component mounts', () => {
-
-  })
-
-  it.skip('sets state with new film data after fetch call is consumed', () => {
-  	
-  })
-})
+    setTimeout(
+      () => expect(renderedFilmCrawl.state('story')).toEqual(expected)
+      , 0);
+  });
+});
