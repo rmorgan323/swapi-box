@@ -39,14 +39,14 @@ describe('Card test', () => {
   });
 
   it('should add a fave-card class if card has a favoriteStatus of true', () => {
-    const renderedCard_notFave = shallow(<Card favoriteStatus={false}/>);
-    const renderedCard_fave = shallow(<Card favoriteStatus={true}/>);
+    const renderedCardNotFave = shallow(<Card favoriteStatus={false}/>);
+    const renderedCardFave = shallow(<Card favoriteStatus={true}/>);
 
-    expect(renderedCard_notFave.find('.fave-card').length).toEqual(0);
-    expect(renderedCard_fave.find('.fave-card').length).toEqual(1);
+    expect(renderedCardNotFave.find('.fave-card').length).toEqual(0);
+    expect(renderedCardFave.find('.fave-card').length).toEqual(1);
   });
 
-  it('should pass in labels for each data category corresponding to the cardType prop value', () => {
+  it('should pass in labels for each data category corresponding to cardType prop value', () => {
     const renderedCard = shallow(<Card name='Luke'
                                        lineOne='Tatooine'
                                        lineTwo='Human'

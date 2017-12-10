@@ -30,9 +30,13 @@ describe('App test', () => {
 
   it('should toggle favorite in card when favoriteCard is called', () => {
     const renderedApp = shallow(<App />, {disableLifecycleMethods: true});
-    const mockCard = [ {name: 'Luke Skywalker',
-                        id: 1,
-                        favorite: false} ];
+    const mockCard = [ 
+      {
+        name: 'Luke Skywalker',
+        id: 1,
+        favorite: false
+      } 
+    ];
     renderedApp.setState({ items: mockCard });
 
     expect(renderedApp.state('items')[0].favorite).toEqual(false);
@@ -46,19 +50,24 @@ describe('App test', () => {
     const renderedApp = await shallow(<App />);
     const expected = ['Luke', 'Leia', 'Chewbacca', 'Hoth', 'Naboo', 'X-Wing', 'Tie Fighter'];
 
-    expect(renderedApp.state('items')).toEqual(expected)
-   
+    expect(renderedApp.state('items')).toEqual(expected);
   });
 
-  it('should set state to the number of cards with property of favorite equals true when findFavorites function is called', () => {
+  it('should set state of favorites when findFavorites function is called', () => {
     const renderedApp = shallow(<App />);
-    const mockCards = [ {name: 'Luke Skywalker',
-                         id: 1,
-                         favorite: false},
-                        {name: 'Hans Solo',
-                         id: 2,
-                         favorite: true} ];
-    
+    const mockCards = [
+      {
+        name: 'Luke Skywalker',
+        id: 1,
+        favorite: false
+      },
+      {
+        name: 'Hans Solo',
+        id: 2,
+        favorite: true
+      }
+    ];
+
     expect(renderedApp.state('favorites')).toEqual(0);
 
     renderedApp.setState({ items: mockCards });

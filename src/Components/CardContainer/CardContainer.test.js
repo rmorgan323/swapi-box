@@ -46,7 +46,7 @@ describe('CardContainer test', () => {
     expect(renderedCardContainer).toMatchSnapshot();
   });
 
-  it('should render cards that pass through the displayItems filter, where active equals cardType', () => {
+  it('should render filtered display cards when active equals cardType', () => {
     const renderedCardContainer = shallow(<CardContainer active={0}
                                                          items={mockItems} />);
 

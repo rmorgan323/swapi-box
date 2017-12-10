@@ -1,7 +1,8 @@
 import { getCharacters, getWorlds, getVehicles, getFilmCrawl } from './apiCalls';
-import { mockPlanetApiResponse, mockVehicleApiResponse, mockPeopleApiResponse } from './__mocks__/mockApiResponse';
+import { mockPlanetApiResponse, mockVehicleApiResponse, mockPeopleApiResponse } 
+  from './__mocks__/mockApiResponse';
 
-describe('fetch characters tests',() => {
+describe('fetch characters tests', () => {
   beforeEach(() => {
     window.fetch = 
       jest.fn().mockImplementation(() =>
@@ -9,7 +10,7 @@ describe('fetch characters tests',() => {
           status: 200,
           json: () => Promise.resolve(
             {results: mockPeopleApiResponse.results}
-          ),
+          )
         }));
   });
 
@@ -22,7 +23,7 @@ describe('fetch characters tests',() => {
   });
 });
 
-describe('fetch worlds tests',() => {
+describe('fetch worlds tests', () => {
   beforeEach(() => {
     window.fetch = 
       jest.fn().mockImplementation(() =>
@@ -30,7 +31,7 @@ describe('fetch worlds tests',() => {
           status: 200,
           json: () => Promise.resolve(
             {results: mockPlanetApiResponse.results}
-          ),
+          )
         }));
   });
 
@@ -43,7 +44,7 @@ describe('fetch worlds tests',() => {
   });
 });
 
-describe('fetch worlds tests',() => {
+describe('fetch worlds tests', () => {
   beforeEach(() => {
     window.fetch = 
       jest.fn().mockImplementation(() =>
@@ -51,7 +52,7 @@ describe('fetch worlds tests',() => {
           status: 200,
           json: () => Promise.resolve(
             {results: mockVehicleApiResponse.results}
-          ),
+          )
         }));
   });
 
@@ -64,10 +65,10 @@ describe('fetch worlds tests',() => {
   });
 });
 
-describe('error handling tests',() => {
+describe('error handling tests', () => {
   it('should throw an error if fetch is rejected', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.reject({
-      status: 500,
+      status: 500
     }));
     const expectedError = Error('Fetch failed');
     const getCharacterData = await getCharacters();
