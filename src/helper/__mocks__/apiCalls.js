@@ -1,11 +1,11 @@
 export const getCharacters = async () => {
-	return ['luke', 'laya', 'chewy']	
+	return await ['Luke', 'Leia', 'Chewbacca']	
 }
 
 export const getWorlds = async () => {
-	return ['hoth', 'deathstar']
+	return await ['Hoth', 'Naboo']
 }
 
 export const getVehicles = async () => {
-	return ['x-wing']
+	return await ['X-Wing', 'Tie Fighter']
 }

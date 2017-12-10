@@ -13,10 +13,10 @@ const Card = ({name, lineOne, lineTwo, lineThree, lineFour, id, cardType, favori
       <div className="card-header-box">
         <h3>{name}</h3>
       </div>
-      <h4><span>{lineOneTitle[cardType]} </span>{lineOne}</h4>
-      <h4><span>{lineTwoTitle[cardType]} </span>{lineTwo}</h4>
-      <h4><span>{lineThreeTitle[cardType]} </span>{lineThree}</h4>
-      <h4 className="overflow"><span>{lineFourTitle[cardType]} </span>{lineFour}</h4>
+      <h4><span>{lineOneTitle[cardType]}</span>{lineOne}</h4>
+      <h4><span>{lineTwoTitle[cardType]}</span>{lineTwo}</h4>
+      <h4><span>{lineThreeTitle[cardType]}</span>{lineThree}</h4>
+      <h4 className="overflow"><span>{lineFourTitle[cardType]}</span>{lineFour}</h4>
       <button onClick={() => favoriteCard(id)}
         className={ favoriteStatus === false ? 'star-outline' : 'star-solid' }
       ></button>
