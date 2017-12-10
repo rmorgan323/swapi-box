@@ -1,27 +1,27 @@
 .card-component {
   background-color: rgba(0, 0, 0, 0.8);
-  width: 300px;
-  height: 399px;
-  padding: 20px;
-  margin: 10px;
   border: 10px solid rgba(255, 255, 255, 0.1);
   border-radius: 25px;
-  position: relative; }
+  height: 399px;
+  margin: 10px;
+  padding: 20px;
+  position: relative;
+  width: 300px; }
   .card-component .card-header-box {
-    height: 40px;
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 40px;
     justify-content: left; }
   .card-component h3 {
     color: #fff;
     font-size: 22px;
-    width: 171px;
+    height: 66px;
     overflow: scroll;
-    height: 64px;
-    padding: 3px 0; }
+    padding: 3px 0;
+    width: 171px; }
   .card-component h4 {
-    font-size: 19px;
     color: #fff;
+    font-size: 19px;
     line-height: 1.4; }
   .card-component span {
     color: rgba(255, 255, 255, 0.6);
@@ -29,30 +29,29 @@
   .card-component button {
     background: none;
     border: none;
+    cursor: pointer;
     position: absolute;
-    top: 8px;
     right: 8px;
-    cursor: pointer; }
+    top: 8px; }
   .card-component .star-outline {
-    width: 60px;
-    height: 60px;
     background-image: url("star-outline.svg");
+    background-repeat: no-repeat;
+    height: 60px;
     opacity: .4;
-    background-repeat: no-repeat; }
+    width: 60px; }
   .card-component .star-outline:hover {
     opacity: 1; }
   .card-component .star-solid {
-    width: 60px;
-    height: 60px;
     background-image: url("star-solid.svg");
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px; }
   .card-component .overflow {
     height: 96px;
-    overflow: scroll;
-    /*background: transparent;*/ }
+    overflow: scroll; }
   .card-component ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; }
+    background: transparent;
+    width: 0px; }
 
 .fave-card {
   border: 10px solid rgba(42, 252, 255, 0.15); }

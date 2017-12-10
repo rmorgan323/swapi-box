@@ -1,7 +1,9 @@
 import React from 'react';
 import './Card.css';
+import PropTypes from 'prop-types';
 
-const Card = ({name, lineOne, lineTwo, lineThree, lineFour, id, cardType, favoriteStatus, favoriteCard}) => {
+const Card = ({name, lineOne, lineTwo, lineThree, lineFour, 
+  id, cardType, favoriteStatus, favoriteCard}) => {
 
   const lineOneTitle = ['Homeworld: ', 'Terrain: ', 'Model: '];
   const lineTwoTitle = ['Species: ', 'Population: ', 'Class: '];
@@ -28,6 +30,18 @@ const Card = ({name, lineOne, lineTwo, lineThree, lineFour, id, cardType, favori
       {cardDisplay}
     </div>
   );
+};
+
+Card.propTypes = {
+  name: PropTypes.string,
+  lineOne: PropTypes.string,
+  lineTwo: PropTypes.string,
+  lineThree: PropTypes.string,
+  lineFour: PropTypes.string,
+  id: PropTypes.number,
+  cardType: PropTypes.number,
+  favoriteStatus: PropTypes.bool,
+  favoriteCard: PropTypes.func
 };
 
 export default Card;

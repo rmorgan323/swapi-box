@@ -24,7 +24,7 @@ export const getCharacters = async () => {
       return newCard;
     });
     return Promise.all(charsArray);
-  } catch(type) {
+  } catch (type) {
     return Error('Fetch failed');
   }
 };
@@ -56,7 +56,7 @@ export const getWorlds = async () => {
       return newCard;
     });
     return Promise.all(worldsArray);
-  } catch(type) {
+  } catch (type) {
     return Error('Fetch failed');
   }
 };
@@ -80,20 +80,20 @@ export const getVehicles = async () => {
       return newCard;
     });
     return Promise.all(vehiclesArray);
-  } catch(type) {
+  } catch (type) {
     return Error('Fetch failed');
   }
 };
 
 export const getFilmCrawl = async () => {
-  try{
+  try {
     let randomFilm = Math.ceil(Math.random() * 7);
     let rawFilmCrawl = await fetch(`https://swapi.co/api/films/${randomFilm}/`);
     let jsonFilmCrawl = await rawFilmCrawl.json();
     let filmCrawl = await pullOpeningCrawl(jsonFilmCrawl);
 
     return filmCrawl;
-  } catch(type) {
+  } catch (type) {
     return Error('Fetch failed');
   }
 };

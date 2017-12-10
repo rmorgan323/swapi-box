@@ -1,6 +1,6 @@
 .header-component {
-	width: 1273px;
 	margin: auto;
+	width: 1273px;
 
 	h1 {
 		color: #fff;
@@ -10,10 +10,10 @@
 
 	.logo {
 		background-image: url('swapi-logo.svg');
-		width: 300px;
-		height: 162px;
 		background-repeat: no-repeat;
+		height: 162px;
 		margin: 0 auto 19px;
+		width: 300px;
 	}
 
 	.header-buttons {
@@ -23,22 +23,23 @@
 	}
 
 	button {
-		border: none;
-		display: flex;
-		justify-content: center;
 		align-items: center;
 		background-color: rgba(42,252,255, .65);
-		height: 40px;
-		width: 220px;
-		font-family: 'News Gothic Std', sans-serif;
-		font-weight: 900;
-		position: relative;
-		font-size: 20px;
-		color: #fff;
-		overflow: hidden;
-		cursor: pointer;
-		padding-top: 4px;
+		border: none;
 		border-radius: 20px;
+		color: #fff;
+		cursor: pointer;
+		display: flex;
+		font-family: 'News Gothic Std', sans-serif;
+		font-size: 20px;
+		font-weight: 900;
+		height: 40px;
+		justify-content: center;
+		overflow: hidden;
+		padding-top: 4px;
+		position: relative;
+		width: 220px;
+		z-index: 1;
 	}
 
 	button:hover {
@@ -47,11 +48,11 @@
 	}
 
 	span {
+		background-color: rgba(0,93,94, .5);
+		padding: 14px;
 		position: absolute;
 		right: 0;
 		top: -5px;
-		background-color: rgba(0,93,94, .5);
-		padding: 14px;
 	}
 }
 
@@ -68,8 +69,8 @@
 		}
 	}
 	.header-buttons {
-		flex-direction: column;
 		align-items: center;
+		flex-direction: column;
 
 		button{
 			margin-bottom: 13px;
