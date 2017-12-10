@@ -24,27 +24,52 @@ describe('App test', () => {
 
   	renderedApp.instance().handleUpdateState(5)
   	expect(renderedApp.state()).toEqual(defaultState)
+
+    renderedApp.instance().handleUpdateState('dog')
+    expect(renderedApp.state()).toEqual(defaultState)
   })
 
   it('should toggle favorite in card when favoriteCard is called', () => {
   	const renderedApp = shallow(<App />, {disableLifecycleMethods: true});
-  	const mockCard = {name: 'luke skywalker',
-  										id: 1,
-  										favorite: false};
+  	const mockCard = [ {name: 'Luke Skywalker',
+  										  id: 1,
+  										  favorite: false} ];
   	renderedApp.setState({ items: mockCard })
-  	console.log(renderedApp.state('items'))
 
-  	renderedApp.instance().favoriteCard(1);
-  	console.log(renderedApp.debug())
+    expect(renderedApp.state('items')[0].favorite).toEqual(false)
+
+    renderedApp.instance().favoriteCard(1)
+
+    expect(renderedApp.state('items')[0].favorite).toEqual(true)
   })
 
-  // it('should set state correctly when component mounts', async () => {
-  // 	const renderedApp = await shallow(<App />);
-  // 	const expected = ['luke', 'laya', 'chewy', 'hoth', 'deathstar', 'x-wing']
-  // 	await renderedApp.update()
-  // 	expect(renderedApp.state('items')).toEqual(expected)
+  it('should set state correctly when component mounts', async () => {
+  	const renderedApp = await shallow(<App />);
+  	const expected = ['Luke', 'Leia', 'Chewbacca', 'Hoth', 'Naboo', 'X-Wing', 'Tie Fighter']
 
-  // })
+    setTimeout(
+      () => expect(renderedApp.state('items')).toEqual(expected)
+    , 0)
+  })
+
+  it('should set state to the number of cards with property of favorite equals true when findFavorites function is called', () => {
+    const renderedApp = shallow(<App />);
+    const mockCards = [ {name: 'Luke Skywalker',
+                         id: 1,
+                         favorite: false},
+                        {name: 'Hans Solo',
+                         id: 2,
+                         favorite: true} ];
+    
+    expect(renderedApp.state('favorites')).toEqual(0)
+
+    renderedApp.setState({ items: mockCards })
+    renderedApp.instance().findFavorites()
+
+    expect(renderedApp.state('favorites')).toEqual(1)
+  })
+
+  // it('')
 
   //rendering
   //state changes - test methods that change state in isolation

@@ -20,7 +20,7 @@ class App extends Component {
   handleUpdateState = (type) => {
     const titleArray = ['characters', 'worlds', 'vehicles', 'favorites'];
     
-    if (type <= 3) {
+    if (type <= 3 && type >= 0) {
       this.setState({active: type, containerTitle: titleArray[type]});
     }
   }
