@@ -10,7 +10,8 @@ const Header = ({handleUpdateState, numberOfFavorites}) => {
         <button onClick={() => handleUpdateState(0)}>CHARACTERS</button>
         <button onClick={() => handleUpdateState(1)}>WORLDS</button>
         <button onClick={() => handleUpdateState(2)}>VEHICLES</button>
-        <button onClick={() => handleUpdateState(3)}>FAVORITES<span>{numberOfFavorites}</span></button>
+        <button onClick={() => handleUpdateState(3)}>FAVORITES
+          <span className="faves">{numberOfFavorites}</span></button>
       </div>
     </div>
   );

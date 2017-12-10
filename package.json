@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "comma-number": "^2.0.0",
+    "eslint-fix": "^1.0.3",
     "moment": "^2.19.3",
     "node-sass-chokidar": "0.0.3",
     "prop-types": "^15.6.0",
