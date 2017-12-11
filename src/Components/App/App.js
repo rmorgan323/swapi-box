@@ -53,15 +53,18 @@ class App extends Component {
   render() {
     return (
       <div className="app-component">
-        <Header handleUpdateState={this.handleUpdateState} 
-                numberOfFavorites={this.state.favorites} />
+        <Header 
+          handleUpdateState={this.handleUpdateState} 
+          numberOfFavorites={this.state.favorites} />
 
-        <CardContainer containerTitle={this.state.containerTitle}
-                       favoriteCard={this.favoriteCard} 
-                       active={this.state.active} 
-                       items={this.state.items} />
+        <CardContainer 
+          containerTitle={this.state.containerTitle}
+          favoriteCard={this.favoriteCard} 
+          active={this.state.active} 
+          items={this.state.items} />
 
         <FilmCrawl active={this.state.active} />
+        
       </div>
     );
   }

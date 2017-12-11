@@ -13,21 +13,21 @@ const CardContainer = ({favoriteCard, active, items}) => {
   }
 
   let currentDisplay = displayItems.map((item) => {
-    return  <Card name={item.name}
-                  lineOne={item.lineOne}
-                  lineTwo={item.lineTwo}
-                  lineThree={item.lineThree}
-                  lineFour={item.lineFour}
-                  key={item.id} 
-                  id={item.id}
-                  cardType={item.cardType}
-                  favoriteStatus={item.favorite}
-                  favoriteCard={favoriteCard} />;
+    return  <Card 
+      name={item.name}
+      lineOne={item.lineOne}
+      lineTwo={item.lineTwo}
+      lineThree={item.lineThree}
+      lineFour={item.lineFour}
+      key={item.id} 
+      id={item.id}
+      cardType={item.cardType}
+      favoriteStatus={item.favorite}
+      favoriteCard={favoriteCard} />;
   });
 	
   return (
     <div className="card-container-component">
-			
       <div className="card-container">
         {currentDisplay}
       </div>
