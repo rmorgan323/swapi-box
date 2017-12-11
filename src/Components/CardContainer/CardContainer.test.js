@@ -47,15 +47,17 @@ describe('CardContainer test', () => {
   });
 
   it('should render filtered display cards when active equals cardType', () => {
-    const renderedCardContainer = shallow(<CardContainer active={0}
-                                                         items={mockItems} />);
+    const renderedCardContainer = shallow(<CardContainer 
+      active={0}
+      items={mockItems} />);
 
     expect(renderedCardContainer.find('Card').length).toEqual(1);
   });
 
   it('should render favorites regardless of cardType when active equals 3', () => {
-    const renderedCardContainer = shallow(<CardContainer active={3}
-                                                         items={mockItems} />);
+    const renderedCardContainer = shallow(<CardContainer 
+      active={3}
+      items={mockItems} />);
 
     expect(renderedCardContainer.find('Card').length).toEqual(2);
   });

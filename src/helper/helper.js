@@ -15,8 +15,9 @@ const convertToRomanNumeral = (integer) => {
 const pullOpeningCrawl = (rawData) => {
   let releaseDate = rawData.release_date.split('-');
   const year = releaseDate.shift();
-  releaseDate.push(year);
 
+  releaseDate.push(year);
+  
   releaseDate[0] === '01' && (releaseDate[0] = 'January');
   releaseDate[0] === '02' && (releaseDate[0] = 'February');
   releaseDate[0] === '03' && (releaseDate[0] = 'March');

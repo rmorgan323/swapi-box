@@ -10,12 +10,12 @@ describe('Card test', () => {
   });
 
   it('should receive props', () => {
-    const renderedCard = mount(<Card name='Luke'
-                                     lineOne='Tatooine'
-                                     lineTwo='Human'
-                                     lineThree='200,000'
-                                     favoriteStatus={false} 
-                                     />);
+    const renderedCard = mount(<Card 
+      name='Luke'
+      lineOne='Tatooine'
+      lineTwo='Human'
+      lineThree='200,000'
+      favoriteStatus={false} />);
 
     expect(renderedCard.props().name).toEqual('Luke');
     expect(renderedCard.props().lineOne).toEqual('Tatooine');
@@ -25,11 +25,12 @@ describe('Card test', () => {
   });
 
   it('should render a card correctly', () => {
-    const renderedCard = shallow(<Card name='Bespin'
-                                       lineOne='gas giant'
-                                       lineTwo='6,000,000'
-                                       lineThree='temperate'
-                                       lineFour='Lobot' />);
+    const renderedCard = shallow(<Card 
+      name='Bespin'
+      lineOne='gas giant'
+      lineTwo='6,000,000'
+      lineThree='temperate'
+      lineFour='Lobot' />);
 
     expect(renderedCard.find('h3').text()).toEqual('Bespin');
     expect(renderedCard.find('h4').at(0).text()).toEqual('gas giant');
@@ -47,11 +48,12 @@ describe('Card test', () => {
   });
 
   it('should pass in labels for each data category corresponding to cardType prop value', () => {
-    const renderedCard = shallow(<Card name='Luke'
-                                       lineOne='Tatooine'
-                                       lineTwo='Human'
-                                       lineThree='200,000'
-                                       cardType={0} />);
+    const renderedCard = shallow(<Card 
+      name='Luke'
+      lineOne='Tatooine'
+      lineTwo='Human'
+      lineThree='200,000'
+      cardType={0} />);
 
     expect(renderedCard.find('h4').at(0).text()).toEqual('Homeworld: Tatooine');
     expect(renderedCard.find('h4').at(1).text()).toEqual('Species: Human');
