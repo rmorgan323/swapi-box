@@ -12,11 +12,11 @@ The styling is my own and the app displays well on all screen sizes.
 
 On load, the opening crawl from one of the Star Wars movies is displayed.
 
-![screenshot]('./public/swapi-intro.png')
+![Screenshot](./public/swapi-intro.png)
 
 ********
 
 Then users can view data about various items from the movies, in this case, worlds.  Worlds can be favorited and will be added to a favorites page as a result.
 
-![screenshot]('./public/swapi-worlds.png')
+![Screenshot](./public/swapi-worlds.png)
 
