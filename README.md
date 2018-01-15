@@ -8,6 +8,8 @@ This was my first project using nested fetch calls.
 
 The styling is my own and the app displays well on all screen sizes.
 
+Live version: https://rmorgan323.github.io/swapi-box/
+
 ********
 
 On load, the opening crawl from one of the Star Wars movies is displayed.
